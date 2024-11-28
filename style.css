@@ -1,0 +1,628 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(images/istockphoto-538489900-612x612.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.manager{
+    width: 60vh;
+    height: 25vh;
+    margin-top: 2%;
+    margin-bottom: -5%;
+    margin-left: -5%;
+    display: flex;
+    justify-content: center;
+}
+.manager img{
+    width: 30%;
+    height: 80%;
+}
+.field-container{
+    width: 120vh;
+    height: 100vh;
+    margin: 5%;
+    background-image: url(images/terrain-de-foot-3d-700-28041978-cutout.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: -10%;
+    margin-bottom: -10%;
+}
+.main-main{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* .eleven-players{
+border: #ff0000 solid;
+} */
+
+.create-squad{
+    width: 30px;
+    height: 80px;
+    background-color: rgba(51, 51, 51, 0.81); 
+    padding: 10%; 
+    border: rgb(24, 24, 24) solid 2px;
+    border-radius: 10px; 
+    box-shadow: 5px 5px 10px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-squad label {
+    display: block; 
+    margin-bottom: 20px; 
+    font-weight: bold;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+} 
+.create-squad input { 
+    width: 180px; 
+    padding: 10px; 
+    margin-bottom: 20px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+}
+.name{
+    margin-top: -70px;
+    margin-bottom: 10px;   
+}
+.squad-info { 
+    display: flex;
+    flex-direction: column;
+    margin-top: 140%;
+    display: flex; 
+    gap: 10px; 
+} 
+.squad-info button { 
+    padding: 10px 20px; 
+    border: #20207d solid 2px; 
+    border-radius: 5px; 
+    width: 120px;
+    background-color: #007BFF; 
+    color: white; 
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer; 
+} 
+.squad-info button:hover { 
+    background-color: #20207d;
+}
+
+::-webkit-scrollbar {
+    width: 10px; 
+    height: 6px; 
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f0f0f0; 
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px; 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+.subs{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    border: rgba(192, 166, 16, 0.582) solid;
+    background-color: rgba(0, 0, 0, 0.514);
+    width: 55%;
+    border-radius: 10px;
+    padding: 1%;
+    margin-left: 10%;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    height: 160px;
+    display: flex;
+}
+.subs img{
+    width: 120px;
+}
+
+.header{
+    background-color: rgb(45, 47, 45);
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;
+    height: 50px;
+    }
+    
+    /* .title-logo{
+        display: flex;
+        justify-content: space-between;
+        width: 55%;
+    } */
+    
+    .title{
+        font-style: italic;
+        font-size: 10px;
+        color: white;
+        text-shadow: black 2px 2px ;
+    
+    }
+    
+    #logo{
+        width: 70px;
+        height: 70px;
+    }
+    
+    .head-buttons{
+        width: 20%;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .players-pool-button{
+        align-content: center;
+    }
+    
+    .players-pool-button button { 
+        padding: 8px 10px; 
+        border: #20207d solid 2px; 
+        border-radius: 10px; 
+        background-color: #007BFF; 
+        color: white; 
+        font-size: 15px;
+        font-weight: 200;
+        cursor: pointer; 
+    } 
+    .players-pool-button button:hover { 
+        background-color: #20207d;
+    }
+    
+    .add-player-button{
+        align-content: center;
+        
+    }
+    
+    .add-player-button button { 
+        padding: 8px 10px; 
+        border: rgba(28, 146, 39, 0.763) solid 2px;
+        border-radius: 10px; 
+        background-color: #007BFF; 
+        color: white; 
+        font-size: 15px;
+        font-weight: 200;
+        cursor: pointer; 
+    } 
+.add-player-button button:hover { 
+    background-color: #20207d;
+    }
+    
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
+}
+
+/* popup box */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hidden {
+    display: none;
+  }
+  
+.popup-content {
+    border: rgba(28, 146, 39, 0.763) solid 2px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(44, 39, 39, 0.712);
+    padding: 20px;
+    border-radius: 10px;
+    width: 40%;
+    height: 80%;
+    position: relative;
+}
+.popup-content .div1{
+    font-size: 13px;
+    color: white;
+    font-family: 'monospace', Courier;
+}
+.popup-content .div2{
+    color: white;
+    font-size: 15px;
+    font-family: 'monospace', Courier;
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+.popup-content .div2 input{
+    margin-bottom: 10%;
+    margin-left: 20px;
+    width: 160px;
+    height: 20px;
+    border: rgba(28, 146, 39, 0.763) solid 2px;
+    border-radius: 5px;
+}
+.popup-content .div2 :nth-child(3) input{
+    margin-left: 1px;
+    
+}
+.popup-content .div2 ::placeholder{
+    padding-left: 10%;
+    font-size: 80%;
+}
+
+.popup-content .div2 :nth-child(2) input{
+    margin-left: 11px;
+}
+#image-url{
+    background: url(images/playerphoto0.jpg) no-repeat;    
+    width: 90px;
+    height: 90px;
+    font-size: 80%;
+}
+.popup-content .div3{
+    display: flex;
+    width: 44%;
+    flex-wrap: wrap;
+    margin-left: 19%;
+    margin-top: -5%;
+    margin-bottom: 5%;
+}
+
+#position-title, #goal-stats-title{
+    color: white;
+    font-size: 15px;
+    font-family: 'monospace', Courier;
+    font-weight: 200;
+    
+}
+#position-options .position-btn {
+    margin: 5px;
+    width: 25px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    border: rgba(28, 146, 39, 0.763) solid 2px;
+    background-color: rgb(66, 66, 67);
+}
+
+#general-stats{
+display: flex;
+flex-wrap: wrap;
+width: 40%;
+gap: 10%;
+margin-left: 20%;
+color: white;
+font-size: 15px;
+font-family: 'monospace', Courier;
+margin-top: -2%;
+}  
+
+#general-stats input{
+    border: rgba(28, 146, 39, 0.763) solid 2px;
+    background-color: rgb(66, 66, 67);
+    width: 40px;
+    border-radius: 5px;
+}
+.popup-content .div4 ::placeholder{
+    padding-left: 5%;
+    font-size: 70%;
+}
+
+#goalkeeper-stats{
+display: flex;
+flex-wrap: wrap;
+width: 40%;
+gap: 10%;
+margin-left: 20%;
+color: white;
+font-size: 15px;
+font-family: 'monospace', Courier;
+margin-top: -2%;
+}  
+
+#goalkeeper-stats input{
+    border: rgba(28, 146, 39, 0.763) solid 2px;
+    background-color: rgb(66, 66, 67);
+    width: 40px;
+    border-radius: 5px;
+}
+
+#goalkeeper-stats {
+    display: none; 
+}
+
+.popup-content .div5{
+    margin-top: 5%;
+    display: flex;
+    justify-content: end;
+}
+
+.popup-content .div5 button{
+background-color: #058d25;
+border: rgb(3, 77, 3) solid 2px;
+border-radius: 5px;
+font-size: 15px;
+}
+
+
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgb(255, 0, 0);
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
+.players-list{
+    display: flex;
+    justify-content: space-around;
+}
+
+.players-list li{
+    border-bottom: rgb(22, 22, 22) solid 2px;
+}
+
+
+.formation-433{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    width: 70%;
+    margin-top: 25%;
+    margin-left: 6%;
+    /* display: none; */
+}
+
+.formation-433 img{
+    width: 240px;
+}
+.attack{
+    /* border: rgb(250, 91, 215) solid; */
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    height: 40px;
+    margin-bottom: 12%;
+    margin-left: 8%;
+}
+.attack1, .attack2, .attack3{
+    margin-right: 10%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.milieu{
+    /* border: rgb(77, 42, 165) solid; */
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    height: 40px;
+    margin-bottom: 10%;
+    margin-left: 12%;
+}
+.milieu1, .milieu2, .milieu3{
+    margin-right: 15%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deffence{
+    /* border: rgb(8, 68, 54) solid; */
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    height: 40px;
+    margin-bottom: 10%;
+    margin-left: 12%;
+}
+
+.deffence1, .deffence2, .deffence3, .deffence4{
+    margin-right: 15%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.gardien{
+    /* border: rgb(40, 7, 7) solid; */
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    height: 40px;
+}
+.gardien1 {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.formation-442{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    width: 50%;
+    margin-top: 12%;
+    margin-left: 4%;
+    /* display: none; */
+
+}
+.formation-442  img{
+    width: 240px;
+}
+
+.attack{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    height: 40px;
+    margin-bottom: 10%;
+    margin-left: 8%;
+}
+.attack1, .attack2{
+    margin-right: 10%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.milieu{
+    /* border: rgb(77, 42, 165) solid; */
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    height: 40px;
+    margin-bottom: 10%;
+    margin-left: 12%;
+}
+.milieu1, .milieu2, .milieu3, .milieu4{
+    margin-right: 15%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deffence{
+    /* border: rgb(8, 68, 54) solid; */
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    height: 40px;
+    margin-bottom: 5%;
+    margin-left: 12%;
+}
+
+.deffence1, .deffence2, .deffence3, .deffence4{
+    margin-right: 15%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.gardien{
+    /* border: rgb(40, 7, 7) solid; */
+    display: flex;
+    justify-content: center;
+    width: 90%;
+}
+.gardien1 {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* .card{
+    border: red solid;
+    width: 20%;
+    height: 400px;
+    background-image: url(images/MANAGER\ card.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card .rating-position{
+    position: absolute;
+    color: rgb(9, 9, 9);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 0.5;
+    margin-left: -12%;
+    margin-top: 5%;
+}
+
+.card .photo{
+    border: white solid 2px;
+    border-radius: 40%;
+    width: 40%;
+    height: 30%;
+    margin: 30%;
+}
+.card .player-name{
+    width: 50%;
+    height: 10%;
+    margin-top: -28%;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+.card .powers{
+    width: 65%;
+    display: flex;
+    gap: 7%;
+}
+.card .nation-club{
+    display: flex;
+    width: 50%;
+    height: 10%;
+    margin-top: -5%;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+}
+.nation-club .nation, .club{
+    border: #0056b3 solid;
+    width: 30%;
+    height: 60%;
+} */
+
+
+
+
+/* ---------------- */
+
