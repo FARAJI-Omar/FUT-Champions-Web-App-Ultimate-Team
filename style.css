@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-image: url(images/istockphoto-538489900-612x612.jpg);
+    background-image: url(images/body-backroung.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -167,24 +167,7 @@ border: #ff0000 solid;
         justify-content: space-between;
     }
     
-    .players-pool-button{
-        align-content: center;
-    }
-    
-    .players-pool-button button { 
-        padding: 8px 10px; 
-        border: #20207d solid 2px; 
-        border-radius: 10px; 
-        background-color: #007BFF; 
-        color: white; 
-        font-size: 15px;
-        font-weight: 200;
-        cursor: pointer; 
-    } 
-    .players-pool-button button:hover { 
-        background-color: #20207d;
-    }
-    
+
     .add-player-button{
         align-content: center;
         
@@ -241,7 +224,7 @@ button:hover {
     padding: 20px;
     border-radius: 10px;
     width: 40%;
-    height: 80%;
+    height: 85%;
     position: relative;
 }
 .popup-content .div1{
@@ -267,6 +250,10 @@ button:hover {
 }
 .popup-content .div2 :nth-child(3) input{
     margin-left: 1px;
+}
+    
+.popup-content .div2 :nth-child(4) input{
+    margin-left: 65px;
     
 }
 .popup-content .div2 ::placeholder{
@@ -565,8 +552,7 @@ font-size: 15px;
 }
 
 
-/* .card{
-    border: red solid;
+.card{
     width: 20%;
     height: 400px;
     background-image: url(images/MANAGER\ card.png);
@@ -574,55 +560,104 @@ font-size: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: absolute;
+    margin-top: -40%;
+    margin-left: 19%;
+    display: none;
 }
 
 .card .rating-position{
     position: absolute;
     color: rgb(9, 9, 9);
-    font-size: 20px;
+    font-size: 60%;
     font-weight: 600;
-    line-height: 0.5;
-    margin-left: -12%;
-    margin-top: 5%;
+    line-height: 0.1;
+    margin-left: -58%;
+    margin-top: 15%;
 }
 
 .card .photo{
-    border: white solid 2px;
     border-radius: 40%;
     width: 40%;
     height: 30%;
-    margin: 30%;
+    margin-top: 25%;
+    background-size: cover;
+    background-position: center;
 }
+
 .card .player-name{
-    width: 50%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 70%;
+    width: 80%;
     height: 10%;
-    margin-top: -28%;
+    margin-top: -8%;
+    margin-bottom: 22%;
     justify-content: center;
     justify-items: center;
     align-items: center;
 }
 .card .powers{
-    width: 65%;
+    width: 80%;
     display: flex;
-    gap: 7%;
+    flex-wrap: wrap;
+    gap: 2%;
+    font-size: 70%;
+    font-weight: 600;
+    margin-top: -40%;
+    margin-left: 30%;
 }
 .card .nation-club{
     display: flex;
     width: 50%;
     height: 10%;
-    margin-top: -5%;
+    margin-top: 5%;
     justify-content: space-between;
     justify-items: center;
     align-items: center;
 }
 .nation-club .nation, .club{
-    border: #0056b3 solid;
-    width: 30%;
-    height: 60%;
-} */
+    width: 40%;
+    height: 80%;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+/* *************** */
 
 
 
 
-/* ---------------- */
 
+.player-box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+}
+
+.player-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.player-box p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.player-box .player-photo {
+    height: 200px;
+    width: 200px;
+    background-size: cover;
+    background-position: center;
+    margin-top: 10px;
+}
+
+.player-box .flag, .player-box .club-logo {
+    width: 30px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 10px;
+}

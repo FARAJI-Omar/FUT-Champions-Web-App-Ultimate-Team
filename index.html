@@ -17,9 +17,6 @@
             </div>
         </div>
         <div class="head-buttons" id="head-buttons">
-            <div class="players-pool-button" id="players-pool-button">
-                <button>Players Market</button>
-            </div>
             <div class="add-player-button" id="create-palyer-button">
                 <button>Create Player</button>
             </div>
@@ -121,9 +118,9 @@
                 </div>
                 <div class="gardien" id="gardien">
                     <div class="gardien1" id="gk">
-                        <span>
+                        <div>
                             <img src="images/bbbbbbbb.png" alt="">
-                        </span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -203,14 +200,17 @@
                             <input type="text" id="player-first-name" name="player-first-name" placeholder="Enter player's first name">
                         </div>
                         <div class="player-nationality">
-                            <label for="player-nationality">Nationality: </label>
-                            <input type="text" id="player-nationality" name="player-nationality" placeholder="Enter player's nationality">
+                            <label for="nationality-photo">Nationality: </label>
+                            <input type="url" id="image-nationality" name="player-nationality" placeholder="Enter image link">
                         </div>
+                        <div class="player-club">
+                            <label for="club-photo">Club:</label>
+                            <input type="url" id="image-club" name="player-club" placeholder="Enter image link">
+                            </div>
                     </div>
-                    <!-- <label>Position:</label> -->
                     <div>
                         <label for="image-url">Image URL:</label>
-                        <input type="text" id="image-url" name="image-url" placeholder="Enter image link">
+                        <input type="url" id="image-url" name="image-url" placeholder="Enter image link">
                     </div>
                 </div>
                 <h2 id="position-title">Position: </h2>
@@ -293,33 +293,26 @@
 
 
     <div class="card" id="card">
-        <div class="rating-position" id="rating">
-            <!-- child of rating and position here -->
-             <!-- <p>90</p>
-             <p>ST</p> -->
+        <div class="rating-position" id="rating-position">
+            <p id="position"></p>
+            <p id="rating"></p>
         </div>
         <div class="photo" id="photo">
-            <!-- child of photo here -->
         </div>
         <div class="player-name" id="player-name">
-            <!-- <p>sdsdffddd fdfdfd</p> -->
-            <!-- child of name here -->
         </div>
         <div class="powers" id="powers">
-            <!-- <div><h5>111</h5></div>
-            <div><h5>222</h5></div>
-            <div><h5>333</h5></div>
-            <div><h5>444</h5></div>
-            <div><h5>555</h5></div>
-            <div><h5>666</h5></div> -->
-            <!-- child of stats here -->
+            <div id="pac"></div>
+            <div id="sho"></div>
+            <div id="pas"></div>
+            <div id="dri"></div>
+            <div id="def"></div>
+            <div id="phy"></div>
         </div>
         <div class="nation-club" id="nation-club">
             <div class="nation" id="nation">
-                <!-- child of nation here -->
             </div>
             <div class="club" id="club">
-                <!-- child of club here -->
             </div>
         </div>
     </div>
