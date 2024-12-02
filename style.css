@@ -7,7 +7,6 @@ body{
     background-attachment: fixed;
     background-size: cover;
 }
-
 .manager{
     width: 60vh;
     height: 25vh;
@@ -18,8 +17,8 @@ body{
     justify-content: center;
 }
 .manager img{
-    width: 30%;
-    height: 80%;
+    width: 20%;
+    height: 60%;
 }
 .field-container{
     width: 120vh;
@@ -35,10 +34,6 @@ body{
     display: flex;
     justify-content: space-around;
 }
-
-/* .eleven-players{
-border: #ff0000 solid;
-} */
 
 .create-squad{
     width: 30px;
@@ -115,23 +110,6 @@ border: #ff0000 solid;
     background: #555;
   }
 
-.subs{
-    overflow-x: scroll;
-    overflow-y: hidden;
-    border: rgba(192, 166, 16, 0.582) solid;
-    background-color: rgba(0, 0, 0, 0.514);
-    width: 55%;
-    border-radius: 10px;
-    padding: 1%;
-    margin-left: 10%;
-    margin-top: 2%;
-    margin-bottom: 5%;
-    height: 160px;
-    display: flex;
-}
-.subs img{
-    width: 120px;
-}
 
 .header{
     background-color: rgb(45, 47, 45);
@@ -355,8 +333,6 @@ border-radius: 5px;
 font-size: 15px;
 }
 
-
-
 .close-btn {
     position: absolute;
     top: 10px;
@@ -367,18 +343,7 @@ font-size: 15px;
     cursor: pointer;
 }
 
-
-.players-list{
-    display: flex;
-    justify-content: space-around;
-}
-
-.players-list li{
-    border-bottom: rgb(22, 22, 22) solid 2px;
-}
-
-
-.formation-433{
+.formation{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -390,274 +355,112 @@ font-size: 15px;
     /* display: none; */
 }
 
-.formation-433 img{
-    width: 240px;
+.formation img{
+    width: 100%;
 }
-.attack{
-    /* border: rgb(250, 91, 215) solid; */
-    display: flex;
-    justify-content: center;
-    width: 90%;
-    height: 40px;
-    margin-bottom: 12%;
-    margin-left: 8%;
-}
-.attack1, .attack2, .attack3{
-    margin-right: 10%;
+.position{
     width: 40px;
     height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
 }
-
-.milieu{
-    /* border: rgb(77, 42, 165) solid; */
-    display: flex;
-    justify-content: center;
-    width: 90%;
-    height: 40px;
-    margin-bottom: 10%;
-    margin-left: 12%;
-}
-.milieu1, .milieu2, .milieu3{
-    margin-right: 15%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.deffence{
-    /* border: rgb(8, 68, 54) solid; */
-    display: flex;
-    justify-content: center;
-    width: 90%;
-    height: 40px;
-    margin-bottom: 10%;
-    margin-left: 12%;
-}
-
-.deffence1, .deffence2, .deffence3, .deffence4{
-    margin-right: 15%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.gardien{
-    /* border: rgb(40, 7, 7) solid; */
-    display: flex;
-    justify-content: center;
-    width: 90%;
-    height: 40px;
-}
-.gardien1 {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.formation-442{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    justify-self: center;
-    width: 50%;
-    margin-top: 12%;
-    margin-left: 4%;
-    /* display: none; */
-
-}
-.formation-442  img{
-    width: 240px;
-}
-
-.attack{
-    display: flex;
-    justify-content: center;
-    width: 90%;
-    height: 40px;
-    margin-bottom: 10%;
-    margin-left: 8%;
-}
-.attack1, .attack2{
-    margin-right: 10%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.milieu{
-    /* border: rgb(77, 42, 165) solid; */
-    display: flex;
-    justify-content: center;
-    width: 90%;
-    height: 40px;
-    margin-bottom: 10%;
-    margin-left: 12%;
-}
-.milieu1, .milieu2, .milieu3, .milieu4{
-    margin-right: 15%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.deffence{
-    /* border: rgb(8, 68, 54) solid; */
-    display: flex;
-    justify-content: center;
-    width: 90%;
-    height: 40px;
-    margin-bottom: 5%;
-    margin-left: 12%;
-}
-
-.deffence1, .deffence2, .deffence3, .deffence4{
-    margin-right: 15%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.gardien{
-    /* border: rgb(40, 7, 7) solid; */
-    display: flex;
-    justify-content: center;
-    width: 90%;
-}
-.gardien1 {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.card{
-    width: 20%;
-    height: 400px;
-    background-image: url(images/MANAGER\ card.png);
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    margin-top: -40%;
-    margin-left: 19%;
-    display: none;
-}
-
-.card .rating-position{
-    position: absolute;
-    color: rgb(9, 9, 9);
-    font-size: 60%;
-    font-weight: 600;
-    line-height: 0.1;
-    margin-left: -58%;
-    margin-top: 15%;
-}
-
-.card .photo{
-    border-radius: 40%;
-    width: 40%;
-    height: 30%;
-    margin-top: 25%;
-    background-size: cover;
-    background-position: center;
-}
-
-.card .player-name{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 70%;
-    width: 80%;
-    height: 10%;
-    margin-top: -8%;
-    margin-bottom: 22%;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-}
-.card .powers{
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2%;
-    font-size: 70%;
-    font-weight: 600;
-    margin-top: -40%;
-    margin-left: 30%;
-}
-.card .nation-club{
-    display: flex;
-    width: 50%;
-    height: 10%;
-    margin-top: 5%;
-    justify-content: space-between;
-    justify-items: center;
-    align-items: center;
-}
-.nation-club .nation, .club{
-    width: 40%;
-    height: 80%;
-    background-size: cover;
-    background-position: center;
-}
-
 
 
 /* *************** */
-
-
-
-
-
-.player-box {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-bottom: 20px;
-    background-color: #f9f9f9;
+.subs{
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    border: rgba(192, 166, 16, 0.582) solid;
+    background-color: rgba(0, 0, 0, 0.514);
+    width: 50%;
+    height: 160px;
+    border-radius: 10px;
+    padding: 1%;
+    margin-left: 10%;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    gap: 5%;
 }
 
-.player-box h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.player-box p {
-    font-size: 1rem;
-    margin: 5px 0;
-}
-
-.player-box .player-photo {
-    height: 200px;
-    width: 200px;
+.player-card {
+    min-width: 120px;
+    min-height: 160px;
+    border-radius: 30%;
+    background-image: url(images/MANAGER\ card.png);
     background-size: cover;
-    background-position: center;
-    margin-top: 10px;
+    position: relative;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
 }
+#position{
+    position: absolute;
+    top: 25%;
+    left: 13%;
+    font-size: 10px;
+    font-weight: 600;
+}
+#rating{
+    position: absolute;
+    top: 15%;
+    left: 13%;
+    font-size: 15px;
+    font-weight: 600;
+}
+#photo {
+    position: absolute;
+    top: 10%;
+    left: 22%;
+    width: 70px;
+    height: 70px;
 
-.player-box .flag, .player-box .club-logo {
-    width: 30px;
-    height: 20px;
-    vertical-align: middle;
-    margin-right: 10px;
+}
+#photo img{
+    width: 100%;
+    height: 100%;
+}
+#player-name{
+    position: absolute;
+    top: 53%;
+    left: 40%;
+    width: 70px;
+    height: 70px;
+    font-size: 15px;
+    font-weight: 600;
+
+}
+#powers{
+    position: absolute;
+    top: 65%;
+    left: 14%;
+    width: 60%;
+    height: 70px;
+    font-size: 6px;
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    gap: 3px;
+
+}
+#club-nation{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: 80%;
+    left: 27%;
+    width: 40%;
+    height: 60px;
+    gap: 12px;
+
+}
+#nation img{
+    width: 20px;
+    height: 13px;
+}
+#club img{
+    width: 20px;
+    height: 13px;
+}
+.position{
+    position: absolute;
+    transition: 0.5s;
 }

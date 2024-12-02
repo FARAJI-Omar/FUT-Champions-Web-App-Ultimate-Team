@@ -5,16 +5,8 @@ const form = document.getElementById("create-player-form");
 const positionOptions = document.querySelectorAll(".position-btn");
 const generalStats = document.getElementById("general-stats");
 const goalkeeperStats = document.getElementById("goalkeeper-stats");
-const button433 = document.getElementById("433");
-const button442 = document.getElementById("442");
-const formation433 = document.getElementById("formation-433");
-const formation442 = document.getElementById("formation-442");
 
 let selectedPosition = null;
-
-let playerId = 1; // To track the player ID for each new player
-let players = []; // Array to store player data
-let gks = []; // Array to store goalkeeper data
 
 // Validation Functions
 function validateName(name) {
@@ -23,10 +15,9 @@ function validateName(name) {
   }
   
   function validateStats(stats) {
-    return stats.every(stat => Number.isInteger(stat) && stat >= 0 && stat <= 100);
+    return stats.every(stat => Number.isInteger(stat) && stat > 0 && stat <= 100);
   }
   
-
 // Show popup and reset stats display
 createPlayerBtn.addEventListener("click", () => {
   popup.classList.remove("hidden");
@@ -47,7 +38,6 @@ positionOptions.forEach((btn) => {
     if (selectedPosition) {
       document.querySelector(`[data-position="${selectedPosition}"]`).style.backgroundColor = "";
     }
-
     // Update selection
     selectedPosition = position;
     btn.style.backgroundColor = "green";
@@ -67,15 +57,11 @@ positionOptions.forEach((btn) => {
 
 // Handle form submission
 form.addEventListener("submit", (e) => {
-    // Prevent form submission until data is processed
     e.preventDefault();
 
     // Get the values from the form inputs
-  const lastName = document.getElementById("player-last-name").value;
-  const firstName = document.getElementById("player-first-name").value;
-  const nationality = document.getElementById("image-nationality").value;
-  const club = document.getElementById("image-club").value;
-  const photo = document.getElementById("image-url").value;
+  const lastName = document.getElementById("player-last-name").value.trim();
+  const firstName = document.getElementById("player-first-name").value.trim();
 
   if (!validateName(firstName) || !validateName(lastName)) {
     alert("First name and last name must contain only letters and spaces and '");
@@ -85,8 +71,6 @@ form.addEventListener("submit", (e) => {
     alert("Please select a position.");
     return;
   }
-
-  // let palyernames, photos, ratings, positions, nations, pacs, shos, pass, dris, defs, phys;
   
   // Stats for players (general stats or goalkeeper stats)
   let stats = [];
@@ -101,52 +85,12 @@ form.addEventListener("submit", (e) => {
     const pos = parseInt(document.getElementById("pos").value);
 
     stats = [div, han, kic, ref, spe, pos];
-
-    if (!validateStats(stats)) {
-        alert("Stats must be between 0 and 100.");
-        return;
-      }
-
     power = Math.round((div + han + kic + ref + spe + pos) / 6);
 
-    // const goalkeeper = {
-    //     id: playerId,
-    //     lastName: lastName,
-    //     firstName: firstName,
-    //     position: selectedPosition,
-    //     nationality: nationality,
-    //     photo: photo,
-    //     power: power,
-    //     stats: {DIV: div, HAN: han, KIC: kic, REF: ref, SPE: spe, POS: pos,}
-    //   };
-      
-      
-    // gks.push(goalkeeper);
-
-    // Update the card with the gk player's data
-    // document.getElementById("rating").textContent = power;
-    // document.getElementById("position").textContent = "GK";
-    // document.getElementById("photo").style.backgroundImage = `url(${photo})`;
-    // document.getElementById("player-name").innerHTML = `<p>${firstName} ${lastName}</p>`;
-    // document.getElementById("nation").style.backgroundImage = `url(${nationality})`;
-    // document.getElementById("club").style.backgroundImage = `url(${club})`;
-
-
-    
-
-// Access the "powers" container
-// const powersContainer = document.getElementById("powers");
-
-// Update stats inside the "powers" container
-// powersContainer.querySelector("#pac").textContent = `DIV\n${div}`;
-// powersContainer.querySelector("#sho").textContent = `HAN\n${han}`;
-// powersContainer.querySelector("#pas").textContent = `KIC\n${kic}`;
-// powersContainer.querySelector("#dri").textContent = `REF\n${ref}`;
-// powersContainer.querySelector("#def").textContent = `SPE\n${spe}`;
-// powersContainer.querySelector("#phy").textContent = `POS\n${pos}`;
-
-
-
+    if (!validateStats(stats)) {
+        alert("Stats must be between 1 and 100.");
+        return;
+      }
     } else {
         const pac = parseInt(document.getElementById("pac").value);
         const sho = parseInt(document.getElementById("sho").value);
@@ -156,157 +100,169 @@ form.addEventListener("submit", (e) => {
         const phy = parseInt(document.getElementById("phy").value);
 
     stats = [pac, sho, pas, dri, def, phy];
+    power = Math.round((pac + sho + pas + dri + def + phy) / 6);
 
     if (!validateStats(stats)) {
-        alert("Stats must be between 0 and 100.");
+        alert("Stats must be between 1 and 100.");
         return;
       }
 
-    power = Math.round((pac + sho + pas + dri + def + phy) / 6);
-
-    // // Push data into the players array
-    // const player = {
-    //     id: playerId,
-    //     lastName: lastName,
-    //     firstName: firstName,
-    //     position: selectedPosition,
-    //     nationality: nationality,
-    //     photo: photo,
-    //     power: power,
-    //     stats: {PAC: pac, SHO: sho, PAS: pas, DRI: dri, DEF: def, PHY: phy,}
-    //   };
-    //   players.push(player);
-
-         // Update the card with the player's data
-    // document.getElementById("rating").textContent = power;
-    // document.getElementById("position").textContent = selectedPosition;
-    // document.getElementById("photo").style.backgroundImage = `url(${photo})`;
-    // document.getElementById("player-name").innerHTML = `<p>${firstName} ${lastName}</p>`;
-    // document.getElementById("nation").style.backgroundImage = `url(${nationality})`;
-    // document.getElementById("club").style.backgroundImage = `url(${club})`;
-
-// Access the "powers" container
-// const powersContainer = document.getElementById("powers");
-
-// Update stats inside the "powers" container
-// powersContainer.querySelector("#pac").textContent = `PAC\n${pac}`;
-// powersContainer.querySelector("#sho").textContent = `SHO\n${sho}`;
-// powersContainer.querySelector("#pas").textContent = `PAS\n${pas}`;
-// powersContainer.querySelector("#dri").textContent = `DRI\n${dri}`;
-// powersContainer.querySelector("#def").textContent = `DEF\n${def}`;
-// powersContainer.querySelector("#phy").textContent = `PHY\n${phy}`;
     }
+// Select the subs container
+const cardContainer = document.getElementById("subs"); // Parent container for all cards
 
-  playerId++;
+// Create a new player card dynamically
+const photo = document.getElementById("image-url").value.trim();
+const nationality = document.getElementById("image-nationality").value.trim();
+const club = document.getElementById("image-club").value.trim();
+const newCard = document.createElement("div");
+newCard.classList.add("player-card");
 
-//  // Create the player box div
-
-//  const playerBox = document.createElement("div");
-//  playerBox.classList.add("player-box"); // Add a class for styling
-
-//  // Add player data to the div
-//  playerBox.innerHTML = `
-//      <h3>${firstName} ${lastName}</h3>
-//      <p>Position: ${selectedPosition}</p>
-//      <p>Nationality: <img src="${nationality}" alt="Nationality" class="flag"></p>
-//      <p>Club: <img src="${club}" alt="Club" class="club-logo"></p>
-//      <p>Rating: ${power}</p>
-//      <div class="player-stats">
-//          <p><strong>Stats:</strong></p>
-//          ${stats.map(stat => `<p>${stat}</p>`).join("")}
-//      </div>
-//      <div class="player-photo" style="background-image: url(${photo});"></div>
-//  `;
-
-//  // Find the target container where the player box should be added
-//  const playersContainer = document.getElementById("card");
-//  playersContainer.appendChild(playerBox);
-
-// const card = document.getElementById('card');
-// card.style.display = "flex";
-
-
-// Access the existing "card" div to display the player data
-const card = document.getElementById("card");
-card.style.display = "flex"; // Ensure the card is displayed (in case it's hidden initially)
-
-// Update the elements inside the card with the player data
-// Rating and position
-card.querySelector("#rating").textContent = power;
-card.querySelector("#position").textContent = selectedPosition;
-
-// Player name
-card.querySelector("#player-name").textContent = firstNameName;
-
-// Player photo
-card.querySelector("#photo").style.backgroundImage = `url(${photo})`;
-
-// Player nationality and club logos
-card.querySelector("#nation").style.backgroundImage = `url(${nationality})`;
-card.querySelector("#club").style.backgroundImage = `url(${club})`;
-
-// Player stats
-const powersContainer = card.querySelector("#powers");
-powersContainer.querySelector("#pac").textContent = `PAC\n${pac}`;
-powersContainer.querySelector("#sho").textContent = `SHO\n${sho}`;
-powersContainer.querySelector("#pas").textContent = `PAS\n${pas}`;
-powersContainer.querySelector("#dri").textContent = `DRI\n${dri}`;
-powersContainer.querySelector("#def").textContent = `DEF\n${def}`;
-powersContainer.querySelector("#phy").textContent = `PHY\n${phy}`;
-
-
+newCard.innerHTML = `
+    <div class="card-header">
+        <span id="rating">${power}</span>
+        <span id="position">${selectedPosition}</span>
+    </div>
+<div id="photo" class="photo">
+    <img src="${photo}" alt="Player photo">
+</div>
+    <div id="player-name" class="player-name">${lastName}</div>
+    <div id="club-nation">
+        <div id="nation" class="nation">
+          <img src="${nationality}" alt="Player photo">
+        </div>
+        <div id="club" class="club">
+          <img src="${club}" alt="Player photo">
+        </div>
+    </div>
+    <div id="powers" class="powers">
+        ${selectedPosition === "GK" ? `
+            <div id="pac1">DIV<br>${stats[0]}</div>
+            <div id="sho1">HAN<br>${stats[1]}</div>
+            <div id="pas1">KIC<br>${stats[2]}</div>
+            <div id="dri1">REF<br>${stats[3]}</div>
+            <div id="def1">SPE<br>${stats[4]}</div>
+            <div id="phy1">POS<br>${stats[5]}</div>
+        ` : `
+            <div id="pac1">PAC<br>${stats[0]}</div>
+            <div id="sho1">SHO<br>${stats[1]}</div>
+            <div id="pas1">PAS<br>${stats[2]}</div>
+            <div id="dri1">DRI<br>${stats[3]}</div>
+            <div id="def1">DEF<br>${stats[4]}</div>
+            <div id="phy1">PHY<br>${stats[5]}</div>
+        `}
+    </div>
+`;
+cardContainer.appendChild(newCard);
 alert("Player added successfully!");
-
-
-// reset the form and selected position
 form.reset();
-
-// updateCard(newPlayer);
-   
-//   console.log("Players Array:", players);
-//   console.log("Goalkeepers Array:", gks);
-
-
 });
-formation433.style.display = "none";
-formation442.style.display = "none";
 
-let selectedButton = null;
+//formations
 
+const button433 = document.getElementById("btn433");
+const button442 = document.getElementById("btn442");
+const formation = document.getElementById("formation");
+
+// Initially hide the formation container
+formation.style.display = "none";
+
+// Add event listeners for buttons
 button433.addEventListener("click", () => {
-  formation433.style.display = ""; 
-  formation442.style.display = "none";
-  updateButtonStyles(button433);
+  // Set styles for the active button
+  button433.style.backgroundColor = "green";
+  button442.style.backgroundColor = ""; // Reset the other button's background
+
+  // Display the formation container
+  formation.style.display = "flex";
 });
 
 button442.addEventListener("click", () => {
-  formation433.style.display = "none"; 
-  formation442.style.display = "";   
-  updateButtonStyles(button442);
+  // Set styles for the active button
+  button442.style.backgroundColor = "green";
+  button433.style.backgroundColor = ""; // Reset the other button's background
+
+  // Display the formation container
+  formation.style.display = "flex";
 });
 
-function updateButtonStyles(selected) {
-  if (selectedButton) {
-    selectedButton.style.backgroundColor = "";
-  }
-  selected.style.backgroundColor = "green";
-  selectedButton = selected;
-};
+
+// Select all elements with the class "position"
+let positions = document.querySelectorAll('.position');
+
+// Add event listener for 433 button
+button433.addEventListener("click", () => {
+  positions[0].style.top = "30%";
+  positions[0].style.right = "56%";
+
+  positions[1].style.top = "30%";
+  positions[1].style.right = "63%";
+
+  positions[2].style.top = "30%";
+  positions[2].style.right = "70%";
+
+  positions[3].style.top = "43%";
+  positions[3].style.right = "56%";
+
+  positions[5].style.top = "48%";
+  positions[5].style.right = "63%";
+
+  positions[4].style.top = "43%";
+  positions[4].style.right = "70%";
+
+  positions[6].style.top = "57%";
+  positions[6].style.right = "75%";
+
+  positions[7].style.top = "61%";
+  positions[7].style.right = "68%";
+
+  positions[8].style.top = "61%";
+  positions[8].style.right = "59%";
+
+  positions[9].style.top = "57%";
+  positions[9].style.right = "52%";
+
+  positions[10].style.top = "70%";
+  positions[10].style.right = "63%";
+
+});
+
+// Add event listener for 442 button
+button442.addEventListener("click", () => {
+  positions[0].style.top = "30%";
+  positions[0].style.right = "68%";
+
+  positions[1].style.top = "30%";
+  positions[1].style.right = "58%";
+
+  positions[5].style.top = "48%";
+  positions[5].style.right = "66%";
+
+  positions[3].style.top = "48%";
+  positions[3].style.right = "60%";
+
+  positions[4].style.top = "42%";
+  positions[4].style.right = "75%";
+  positions[3].style.border = "blue solid";
+  positions[2].style.border = "red solid";
 
 
+  positions[2].style.top = "42%";
+  positions[2].style.right = "50%";
+
+  positions[6].style.top = "57%";
+  positions[6].style.right = "75%";
 
 
+  positions[7].style.top = "61%";
+  positions[7].style.right = "68%";
 
+  positions[8].style.top = "61%";
+  positions[8].style.right = "59%";
 
+  positions[9].style.top = "57%";
+  positions[9].style.right = "52%";
 
-
-
-
-
-
-  
-
-
-  
-
-
+  positions[10].style.top = "70%";
+  positions[10].style.right = "63%";
+});
