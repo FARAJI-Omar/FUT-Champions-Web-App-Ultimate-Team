@@ -118,6 +118,7 @@
 
   const newCard = document.createElement("div");
   newCard.classList.add("player-card");
+  newCard.setAttribute("data-position", selectedPosition);
 
   newCard.innerHTML = `
       <div class="card-header">
@@ -195,6 +196,7 @@
 
                 // Place the dragged card in the target box
                 box.appendChild(selected);
+
             } else if (box.children.length === 0) {
                 box.appendChild(selected);
               }
@@ -220,6 +222,101 @@
         newCard.remove();
       }      
     });
+// Create the Edit button
+const editBtn = document.createElement('button'); 
+editBtn.innerHTML = `<img src="images/edit.png" alt="Edit">`;                    
+editBtn.classList.add('editbtn');      
+
+editBtn.addEventListener('click', () => {
+    // Check if an editBox already exists
+    const existEditBox = newCard.querySelectorAll('.editbox');
+    if (existEditBox.length === 0) { 
+        // Create the editBox
+        const editBox = document.createElement('div');
+        editBox.classList.add('editbox');
+
+        const cardPosition = newCard.getAttribute("data-position");
+        console.log("Editing Position:", cardPosition);
+        
+        editBox.innerHTML = `
+            <label>First Name: <input type="text" id="edit-first-name" value="${firstName}"></label>
+            <label>Last Name: <input type="text" id="edit-last-name" value="${lastName}"></label>
+            <label>Nationality (URL): <input type="url" id="edit-nationality" value="${nationality}"></label>
+            <label>Club (URL): <input type="url" id="edit-club" value="${club}"></label>
+            <label>Photo (URL): <input type="url" id="edit-photo" value="${photo}"></label>
+        `;
+
+        // Add stats inputs based on position
+        if (cardPosition === "GK") {
+            editBox.innerHTML += `
+                <label>DIVvv: <input type="number" id="edit-div" value="${stats[0]}" min="1" max="100"></label>
+                <label>HAN: <input type="number" id="edit-han" value="${stats[1]}" min="1" max="100"></label>
+                <label>KIC: <input type="number" id="edit-kic" value="${stats[2]}" min="1" max="100"></label>
+                <label>REF: <input type="number" id="edit-ref" value="${stats[3]}" min="1" max="100"></label>
+                <label>SPE: <input type="number" id="edit-spe" value="${stats[4]}" min="1" max="100"></label>
+                <label>POS: <input type="number" id="edit-pos" value="${stats[5]}" min="1" max="100"></label>
+            `;
+        } else {
+            editBox.innerHTML += `
+                <label>PAC: <input type="number" id="edit-pac" value="${stats[0]}" min="1" max="100"></label>
+                <label>SHO: <input type="number" id="edit-sho" value="${stats[1]}" min="1" max="100"></label>
+                <label>PAS: <input type="number" id="edit-pas" value="${stats[2]}" min="1" max="100"></label>
+                <label>DRI: <input type="number" id="edit-dri" value="${stats[3]}" min="1" max="100"></label>
+                <label>DEF: <input type="number" id="edit-def" value="${stats[4]}" min="1" max="100"></label>
+                <label>PHY: <input type="number" id="edit-phy" value="${stats[5]}" min="1" max="100"></label>
+            `;
+        }
+
+        const updatedFirstName = document.getElementById("edit-first-name").value.trim();
+        const updatedLastName = document.getElementById("edit-last-name").value.trim();
+        const updatedNationality = document.getElementById("edit-nationality").value.trim();
+        const updatedClub = document.getElementById("edit-club").value.trim();
+        const updatedPhoto = document.getElementById("edit-photo").value.trim();
+        
+        console.log(updatedLastName);
+
+        // firstName = updatedFirstName;
+        // lastName = updatedLastName;
+
+
+
+
+
+
+        // Create the Cancel button
+        const cancelBtn = document.createElement('button');
+        cancelBtn.textContent = 'Cancel';
+        cancelBtn.classList.add('cancel-btn');
+        
+        // Create the Confirm button
+        const confirmBtn = document.createElement('button');
+        confirmBtn.textContent = 'Confirm';
+        confirmBtn.classList.add('confirm-btn');
+        
+        // Append buttons to editBox
+        editBox.appendChild(cancelBtn);
+        editBox.appendChild(confirmBtn);
+
+        // Append the editBox to the newCard
+        newCard.appendChild(editBox);
+
+        // Cancel button functionality: Close the editBox
+        cancelBtn.addEventListener('click', () => {
+            newCard.removeChild(editBox); // Remove the editBox from the newCard
+        });
+
+        // Confirm button functionality: Close the editBox and display a message
+        confirmBtn.addEventListener('click', () => {
+            alert("Changes saved"); // Show "Changes saved" message
+            newCard.removeChild(editBox); // Remove the editBox from the newCard
+        });
+    }
+});
+
+// Append the edit button to the newCard
+newCard.appendChild(editBtn);
+
+
 
 
   form.reset();

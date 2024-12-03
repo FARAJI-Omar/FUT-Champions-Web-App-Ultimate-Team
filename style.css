@@ -368,7 +368,7 @@ font-size: 15px;
 .subs{
     display: flex;
     overflow-x: scroll;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
     border: rgba(192, 166, 16, 0.582) solid;
     background-color: rgba(0, 0, 0, 0.514);
     width: 50%;
@@ -378,6 +378,7 @@ font-size: 15px;
     margin-left: 10%;
     margin-top: 2%;
     margin-bottom: 5%;
+    padding-bottom: 15%;
     gap: 5%;
 }
 
@@ -474,14 +475,72 @@ font-size: 15px;
 }
 
 .deletebtn {
-    background-color: red;
+    background-color: rgb(252, 26, 26);
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 2px 9px;
     cursor: pointer;
-    border-radius: 3px;
+    border-radius: 5px;
+    position: absolute;
+    top: 17%;
+    left: 88%;
 }
 
 .deletebtn:hover {
-    background-color: darkred;
+    background-color: rgb(116, 3, 3);
+}
+
+.editbtn{
+    background-color: rgb(245, 245, 245);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px 3px;
+    position: absolute;
+    top: 32%;
+    left: 88%;
+}
+ .editbtn img{
+    width: 17px;
+    height: 20px;
+ }
+
+ .editbox{
+    position: absolute;
+    width: 300px;
+    height: 350px;
+    background-color: red;
+    border: solid rgb(59, 59, 219) 1px;
+    border-radius: 10px;
+    top: 17%;
+    left: 88%;
+    z-index: 1;
+}
+
+.cancel-btn{
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    top: 93%;
+    right: 79%;
+    width: 60px;
+    height: 20px;
+}
+.confirm-btn{
+        position: absolute;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    top: 93%;
+    right: 1%;
+    width: 60px;
+    height: 20px;
+    background-color: green;
+}
+.cancel-btn:hover{
+    background-color: #160967;
+}
+.confirm-btn:hover{
+    background-color: rgb(9, 73, 9);
 }
