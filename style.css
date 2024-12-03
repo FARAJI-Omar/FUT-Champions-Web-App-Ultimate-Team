@@ -22,12 +22,12 @@ body{
 }
 .field-container{
     width: 120vh;
-    height: 100vh;
+    height: 65vh;
     margin: 5%;
     background-image: url(images/terrain-de-foot-3d-700-28041978-cutout.png);
     background-repeat: no-repeat;
     background-position: center;
-    margin-top: -10%;
+    margin-top: -5%;
     margin-bottom: -10%;
 }
 .main-main{
@@ -352,7 +352,7 @@ font-size: 15px;
     width: 70%;
     margin-top: 25%;
     margin-left: 6%;
-    /* display: none; */
+    display: none;
 }
 
 .formation img{
@@ -388,11 +388,19 @@ font-size: 15px;
     background-image: url(images/MANAGER\ card.png);
     background-size: cover;
     position: relative;
+    /* top: -180%;
+    right: 80%; */
     /* display: flex;
     flex-direction: column;
     align-items: center; */
 }
-#position{
+.position{
+    background-image: url(images/bbbbbbbb.png);
+    background-size: cover;
+    position: relative;
+}
+
+#position{  
     position: absolute;
     top: 25%;
     left: 13%;
@@ -421,7 +429,7 @@ font-size: 15px;
 #player-name{
     position: absolute;
     top: 53%;
-    left: 40%;
+    left: 30%;
     width: 70px;
     height: 70px;
     font-size: 15px;
