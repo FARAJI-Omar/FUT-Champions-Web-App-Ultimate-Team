@@ -472,3 +472,16 @@ font-size: 15px;
     position: absolute;
     transition: 0.5s;
 }
+
+.deletebtn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.deletebtn:hover {
+    background-color: darkred;
+}

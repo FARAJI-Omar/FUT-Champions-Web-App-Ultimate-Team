@@ -197,12 +197,10 @@
                 box.appendChild(selected);
             } else if (box.children.length === 0) {
                 box.appendChild(selected);
-            }
-        }
-    });
-}
-
-
+              }
+          }
+      });
+    }
       box1.addEventListener("dragover", function(e){
           e.preventDefault();
       });
@@ -210,7 +208,18 @@
           box1.appendChild(selected);
       })
 
-
+      //delete
+      const deleteBtn = document.createElement('button');
+      deleteBtn.textContent = "x";
+      deleteBtn.classList.add('deletebtn');
+      newCard.appendChild(deleteBtn);
+      deleteBtn.addEventListener('click',() =>{
+      //confirmation winddow
+      const confirmDelete = window.confirm('Are you sure you want to delete this player?');
+      if (confirmDelete) {
+        newCard.remove();
+      }      
+    });
 
 
   form.reset();
