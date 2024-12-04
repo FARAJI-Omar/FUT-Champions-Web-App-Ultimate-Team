@@ -39,6 +39,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-right: 2%;
 }
 .select-tactic{
     color: white;
@@ -237,7 +238,7 @@ button:hover {
     margin-bottom: 5%;
 }
 
-#position-title, #goal-stats-title{
+#positiontitle, #goal-stats-title{
     color: white;
     font-size: 15px;
     font-family: 'monospace', Courier;
@@ -305,6 +306,7 @@ button:hover {
     margin-top: 1%;
     display: flex;
     justify-content: end;
+    margin-top: -2%;
 }
 
 .popup-content .div5 button{
@@ -355,7 +357,7 @@ button:hover {
     height: 90px;
     border-radius: 10px;
     padding: 7%;
-    margin-left: 12%;
+    margin-left: 5%;
     margin-top: 2%;
     margin-bottom: 5%;
     padding-bottom: 15%;
@@ -497,7 +499,6 @@ button:hover {
     border-radius: 10px;
     top: 15%;
     left: 88%;
-    z-index: 4;
 }
 
 .editbox input{
@@ -534,4 +535,1662 @@ button:hover {
 }
 .confirm-btn:hover{
     background-color: rgb(9, 73, 9);
+}
+
+
+/* Petit Écran d'Ordinateur: De 1024px à 1279px */
+@media (min-width: 768px) and (max-width: 1024px) {
+    body{
+        margin: 0;
+        background-image: url(images/body-backroung.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    
+    .field-container{
+        width: 150vh;
+        height: 85vh;
+        margin: 5%;
+        background-image: url(images/terrain-de-foot-3d-700-28041978-cutout.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 120%;
+        margin-top: 2%;
+        margin-bottom: -2%;
+    }
+    .mainpage{
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .create-squad{
+        backdrop-filter: blur(10px);
+        margin-top: 7%;
+        width: 30px;
+        height: 80px;
+        background-color: rgba(51, 51, 51, 0.7); 
+        padding: 10%;
+        padding-top: 12%; 
+        padding-bottom: 8%;
+        border: rgba(255, 255, 255, 0.603) solid 1px;
+        border-radius: 10px; 
+        box-shadow: 5px 5px 10px black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 5%;
+    }
+    .select-tactic{
+        color: white;
+        width: 80px;
+        font-size: 15px;
+        margin-bottom: -50px;
+    }
+    
+    .create-squad label {
+        display: block; 
+        margin-bottom: 10px; 
+        font-weight: bold;
+        color: white;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 600;
+    } 
+    .create-squad input { 
+        width: 200%; 
+        padding: 8px; 
+        margin-bottom: 20px; 
+        border: 2px solid #aeacac; 
+        border-radius: 10px;
+        
+    }
+    .squadname{
+        margin-top: -70px;
+        margin-bottom: 10px;   
+    }
+    .squad-formations { 
+        display: flex;
+        flex-direction: column;
+        margin-top: 140%;
+        display: flex; 
+        gap: 10px; 
+    } 
+    .squad-formations button { 
+        padding: 10px 20px; 
+        border: #20207d solid 2px; 
+        border-radius: 5px; 
+        width: 90px;
+        background-color: #007BFF; 
+        color: white; 
+        font-size: 15px;
+        font-weight: 600;
+        font-family: 'Courier New', Courier, monospace;
+        cursor: pointer; 
+    } 
+    .squad-formations button:hover { 
+        background-color: #20207d;
+    }
+    
+    ::-webkit-scrollbar {
+        width: 10px; 
+        height: 6px; 
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: #f0f0f0; 
+        border-radius: 10px;
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 10px; 
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+    
+    .header{
+        border-bottom: rgb(255, 255, 255) solid 1px;
+        background-color: rgb(45, 47, 45);
+        display: flex;
+        justify-content: space-between;
+        padding-left: 5%;
+        }
+        
+    .title{
+        font-style: italic;
+        font-size: 10px;
+        color: white;
+        text-shadow: black 2px 2px ; 
+    }
+               
+    .add-player-button{
+        align-content: center;    
+    }
+        
+    .add-player-button button { 
+        padding: 8px 10px;
+        width: 120px;
+        height: 50px;
+        border: rgba(23, 9, 125, 0.763) solid 2px;
+        border-radius: 5px; 
+        background-color: #007BFF; 
+        color: white; 
+        font-size: 15px;
+        font-weight: 200;
+        cursor: pointer; 
+    } 
+    
+    .add-player-button button:hover { 
+        background-color: #20207d;
+    }
+        
+    button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    
+    /* popup box to create a new player */
+    .popup {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(1, 1, 1, 0.2);
+        backdrop-filter: blur(5px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 5;
+    }
+    .hidden {
+        display: none;
+    }
+      
+    .popup-content {
+        border: rgba(28, 146, 39, 0.763) solid 2px;
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(44, 39, 39, 0.9);
+        padding: 10px;
+        border-radius: 10px;
+        width: 75%;
+        height: 80%;
+        position: relative;
+    }
+    .popup-content .div1{
+        font-size: 10px;
+        color: white;
+        font-family: 'monospace', Courier;
+    }
+    .popup-content .div2{
+        color: white;
+        font-size: 15px;
+        font-family: 'monospace', Courier;
+        margin-top: 5%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .popup-content .div2 input{
+        margin-bottom: 5%;
+        margin-left: 20px;
+        width: 140px;
+        height: 15px;
+        border: rgba(28, 146, 39, 0.763) solid 2px;
+        border-radius: 5px;
+    }
+   
+        
+  
+    .popup-content .div2 ::placeholder{
+        padding-left: 10%;
+        font-size: 80%;
+    }
+    
+    .popup-content .div2 :nth-child(2) input{
+        /* margin-left: 11px; */
+    }
+    .popup-content .div2 #photoP{
+        margin-left: 10%;
+    }
+    #image-url{
+        background: url(images/playerphoto0.jpg) no-repeat;    
+        background-position: center;
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        font-size: 10px;
+        margin-left: 20%;
+    }
+    .positiontitle {
+        font-size: 10px;
+        color: rgb(255, 255, 255);
+        font-family: 'monospace', Courier;
+        font-weight: 200;    
+    }
+    .popup-content .div3{
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        margin-left: 2%;
+        margin-top: -2%;
+        margin-bottom: 5%;
+    }
+    
+    #goal-stats-title{
+        color: white;
+        font-size: 10px;
+        font-family: 'monospace', Courier;
+        font-weight: 200;    
+    }
+    #position-options .position-btn {
+        margin: 5px;
+        width: 10px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        border: rgba(28, 146, 39, 0.763) solid 2px;
+        background-color: rgb(66, 66, 67);
+    }
+    
+    #general-stats{
+        display: flex;
+        flex-wrap: wrap;
+        width: 80%;
+        gap: 10%;
+        margin-left: 10%;
+        color: white;
+        font-size: 15px;
+        font-family: 'monospace', Courier;
+        margin-top: 2%;
+    }  
+    
+    #general-stats input{
+        border: rgba(28, 146, 39, 0.763) solid 2px;
+        background-color: rgb(66, 66, 67);
+        width: 30px;
+        border-radius: 5px;
+        margin-bottom: 5%;
+    }
+    .popup-content .div4 ::placeholder{
+        padding-left: 5%;
+        font-size: 70%;
+    }
+    
+    #goalkeeper-stats{
+        display: flex;
+        flex-wrap: wrap;
+        width: 80%;
+        gap: 10%;
+        margin-left: 10%;
+        color: white;
+        font-size: 15px;
+        font-family: 'monospace', Courier;
+        margin-top: 2%;
+    }  
+    
+    #goalkeeper-stats input{
+        border: rgba(28, 146, 39, 0.763) solid 2px;
+        background-color: rgb(66, 66, 67);
+        width: 30px;
+        border-radius: 5px;
+        margin-bottom: 5%;
+    }
+    
+    #goalkeeper-stats {
+        display: none; 
+    }
+    
+    .popup-content .div5{
+        margin-top: 1%;
+        display: flex;
+        justify-content: end;
+    }
+    
+    .popup-content .div5 button{
+        background-color: #058d25;
+        border: rgb(3, 77, 3) solid 2px;
+        border-radius: 5px;
+        font-size: 12px;
+        width: 20%;
+        margin-top: 5%;
+    }
+    
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgb(255, 0, 0);
+        color: white;
+        padding: 3px 7px;
+        cursor: pointer;
+    }
+    
+    .formation{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        justify-self: center;
+        width: 70%;
+        margin-top: 25%;
+        margin-left: 6%;
+        display: none;
+    }
+    
+    .formation img{
+        width: 100%;
+    }
+    .position{
+        width: 20px;
+        height: 20px;
+    }
+    
+    /* *************** */
+    .subs{
+        display: flex;
+        overflow-x: scroll;
+        overflow-y: scroll;
+        border: rgb(255, 255, 255) solid 1px;
+        background-color: rgba(0, 0, 0, 0.514);
+        width: 50%;
+        height: 90px;
+        border-radius: 10px;
+        /* padding: 7%; */
+        padding-top: 10%;
+        padding-left: 10%;
+        margin-left: 5%;
+        margin-top: 2%;
+        margin-bottom: 5%;
+        padding-bottom: 15%;
+        gap: 5%;
+    }
+    
+    .player-card {
+        min-width: 100px;
+        min-height: 140px;
+        border-radius: 30%;
+        background-image: url(images/MANAGER\ card.png);
+        background-size: cover;
+        position: relative;
+        transform: translate(-50%, -60%);
+    }
+    .position{
+        background-image: url(images/bbbbbbbb.png);
+        background-size: cover;
+        position: relative;
+    }
+    
+    #position{  
+        position: absolute;
+        top: 25%;
+        left: 13%;
+        font-size: 10px;
+        font-weight: 600;
+    }
+    #rating{
+        position: absolute;
+        top: 15%;
+        left: 13%;
+        font-size: 15px;
+        font-weight: 600;
+    }
+    #photo {
+        position: absolute;
+        top: 10%;
+        left: 22%;
+        width: 70px;
+        height: 70px;
+    
+    }
+    #photo img{
+        width: 100%;
+        height: 100%;
+    }
+    #player-name{
+        position: absolute;
+        top: 53%;
+        left: 30%;
+        width: 70px;
+        height: 70px;
+        font-size: 15px;
+        font-weight: 600;
+    }
+    #powers{
+        position: absolute;
+        top: 65%;
+        left: 14%;
+        width: 40%;
+        height: 70px;
+        font-size: 5px;
+        font-weight: 600;
+        text-align: center;
+        display: flex;
+        gap: 3px;
+    }
+    #club-nation{
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        top: 80%;
+        left: 27%;
+        width: 40%;
+        height: 60px;
+        gap: 12px;
+    }
+    #nation img{
+        width: 20px;
+        height: 13px;
+    }
+    #club img{
+        width: 20px;
+        height: 13px;
+    }
+    .position{
+        position: absolute;
+        transition: 0.5s;
+    }
+    
+    .deletebtn {
+        background-color: rgb(252, 26, 26);
+        color: white;
+        border: none;
+        padding: 2px 9px;
+        cursor: pointer;
+        border-radius: 5px;
+        position: absolute;
+        top: 17%;
+        left: 88%;
+    }
+    
+    .deletebtn:hover {
+        background-color: rgb(116, 3, 3);
+    }
+    
+    .editbtn{
+        background-color: rgb(245, 245, 245);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1px 3px;
+        position: absolute;
+        top: 32%;
+        left: 88%;
+    }
+     .editbtn img{
+        width: 17px;
+        height: 20px;
+     }
+    
+     .editbox{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5%;
+        padding-bottom: 50%;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        gap: 10%;
+        position: absolute;
+        width: 180px;
+        height: 220px;
+        background-color: rgb(66, 132, 238);
+        border: solid rgb(18, 18, 158) 2px;
+        border-radius: 10px;
+        top: 15%;
+        left: 88%;
+        z-index: 4;
+    }
+    
+    .editbox input{
+        border-radius: 5px;
+        color: #272727;
+        margin-top: 2%;
+    }
+    
+    .cancel-btn{
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        top: 91%;
+        border: rgb(43, 4, 128) solid 1px;
+        right: 65%;
+        width: 60px;
+        height: 20px;
+    }
+    .confirm-btn{
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        top: 91%;
+        right: 1%;
+        width: 60px;
+        height: 20px;
+        background-color: green;
+        border: rgb(43, 4, 128) solid 1px;
+    }
+    .cancel-btn:hover{
+        background-color: #160967;
+    }
+    .confirm-btn:hover{
+        background-color: rgb(9, 73, 9);
+    }
+}
+
+/* Tablette: De 425px à 700px */
+@media (min-width: 450px) and (max-width: 768px) {
+    body{
+        margin: 0;
+        background-image: url(images/body-backroung.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    
+    .field-container{
+        width: 80%;
+        height: 800px;
+        margin: 5%;
+        background-image: url(images/field\ 2D.jpg);
+        background-position: center;
+        background-size: 90%;
+        margin-top: 5%;
+        order: 2;
+        position: relative;
+    }
+    .mainpage{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .create-squad{
+        backdrop-filter: blur(10px);
+        margin-top: 5%;
+        width: 20%;
+        height: 180px;
+        background-color: rgba(51, 51, 51, 0.7); 
+        /* padding: 10%;
+        padding-top: 32%; 
+        padding-bottom: 20%; */
+        border: rgba(255, 255, 255, 0.603) solid 1px;
+        border-radius: 10px; 
+        box-shadow: 5px 5px 10px black;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+    .select-tactic{ 
+        color: white;
+        width: 70px;
+        font-size: 12px;
+    }
+    
+    .create-squad label {
+        /* display: block;  */
+        /* margin-bottom: 10px;  */
+        font-weight: bold;
+        color: white;
+        margin-top: 15%;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 600;
+        font-size: 15px;
+    } 
+    .create-squad input { 
+        width: 180px; 
+        height: 8px;
+        padding: 5px; 
+        /* margin-bottom: 20px;  */
+        border: 2px solid #aeacac; 
+        border-radius: 5px;
+    }
+  
+    .squad-formations { 
+        display: flex;
+        flex-direction: column;
+        margin-top: 30%;
+    } 
+    .squad-formations button { 
+        padding: 10px 20px; 
+        border: #20207d solid 2px; 
+        border-radius: 5px; 
+        width: 90px;
+        background-color: #007BFF; 
+        color: white; 
+        font-size: 12px;
+        font-weight: 600;
+        font-family: 'Courier New', Courier, monospace;
+        cursor: pointer;
+        height: 30px;
+
+    } 
+    .squad-formations button:hover { 
+        background-color: #20207d;
+    }
+    
+    ::-webkit-scrollbar {
+        width: 10px; 
+        height: 6px; 
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: #f0f0f0; 
+        border-radius: 10px;
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 10px; 
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+    
+    .header{
+        border-bottom: rgb(255, 255, 255) solid 1px;
+        background-color: rgb(45, 47, 45);
+        display: flex;
+        justify-content: space-between;
+        padding-left: 5%;
+        }
+        
+    .title{
+        font-style: italic;
+        font-size: 10px;
+        color: white;
+        text-shadow: black 2px 2px ; 
+    }
+               
+    .add-player-button button { 
+        padding: 15px 10px;
+        width: 100px;
+        height: 15px;
+        border: rgba(23, 9, 125, 0.763) solid 2px;
+        border-radius: 5px; 
+        background-color: #007BFF; 
+        color: white; 
+        font-size: 12px;
+        font-weight: 100;
+        cursor: pointer; 
+        /* margin-top: -20%; */
+
+    } 
+    
+    .add-player-button button:hover { 
+        background-color: #fbfbfb;
+    }
+        
+    button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    
+    /* popup box to create a new player */
+    .popup {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(1, 1, 1, 0.2);
+        backdrop-filter: blur(5px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 5;
+    }
+    .hidden {
+        display: none;
+    }
+      
+    .popup-content {
+        border: rgba(28, 146, 39, 0.763) solid 2px;
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(44, 39, 39, 0.9);
+        padding: 10px;
+        border-radius: 10px;
+        width: 75%;
+        height: 80%;
+        position: relative;
+    }
+    .popup-content .div1{
+        font-size: 10px;
+        color: white;
+        font-family: 'monospace', Courier;
+    }
+    .popup-content .div2{
+        color: white;
+        font-size: 10px;
+        font-family: 'monospace', Courier;
+        margin-top: 5%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .popup-content .div2 input{
+        margin-bottom: 5%;
+        margin-left: 20px;
+        width: 140px;
+        height: 15px;
+        border: rgba(28, 146, 39, 0.763) solid 2px;
+        border-radius: 5px;
+    }
+   
+        
+    .popup-content .div2 :nth-child(1) input{
+        margin-left: 20%;
+        
+    }
+    .popup-content .div2 ::placeholder{
+        padding-left: 10%;
+        font-size: 80%;
+    }
+    
+    .popup-content .div2 :nth-child(4) input{
+        margin-left: 20%;
+    }
+    .popup-content .div2 #photoP{
+        margin-left: 10%;
+    }
+    #image-url{
+        background: url(images/playerphoto0.jpg) no-repeat;    
+        background-position: center;
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        font-size: 10px;
+        margin-left: 20%;
+    }
+    #positiontitle{
+        font-size: 10px;
+        color: white;
+        font-family: 'monospace', Courier;
+        font-weight: 200;    
+    }
+    .popup-content .div3{
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        margin-left: 2%;
+        margin-top: -2%;
+        margin-bottom: 5%;
+    }
+    
+    #goal-stats-title{
+        color: white;
+        font-size: 10px;
+        font-family: 'monospace', Courier;
+        font-weight: 200;    
+    }
+    #position-options .position-btn {
+        margin: 5px;
+        width: 10px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        border: rgba(28, 146, 39, 0.763) solid 2px;
+        background-color: rgb(66, 66, 67);
+    }
+    
+    #general-stats{
+        display: flex;
+        flex-wrap: wrap;
+        width: 80%;
+        gap: 10%;
+        margin-left: 10%;
+        color: white;
+        font-size: 15px;
+        font-family: 'monospace', Courier;
+        margin-top: 2%;
+    }  
+    
+    #general-stats input{
+        border: rgba(28, 146, 39, 0.763) solid 2px;
+        background-color: rgb(66, 66, 67);
+        width: 30px;
+        border-radius: 5px;
+        margin-bottom: 5%;
+    }
+    .popup-content .div4 ::placeholder{
+        padding-left: 5%;
+        font-size: 70%;
+    }
+    
+    #goalkeeper-stats{
+        display: flex;
+        flex-wrap: wrap;
+        width: 80%;
+        gap: 10%;
+        margin-left: 10%;
+        color: white;
+        font-size: 15px;
+        font-family: 'monospace', Courier;
+        margin-top: 2%;
+    }  
+    
+    #goalkeeper-stats input{
+        border: rgba(28, 146, 39, 0.763) solid 2px;
+        background-color: rgb(66, 66, 67);
+        width: 30px;
+        border-radius: 5px;
+        margin-bottom: 5%;
+    }
+    
+    #goalkeeper-stats {
+        display: none; 
+    }
+    
+    .popup-content .div5{
+        margin-top: 1%;
+        display: flex;
+        justify-content: end;
+    }
+    
+    .popup-content .div5 button{
+        background-color: #058d25;
+        border: rgb(3, 77, 3) solid 2px;
+        border-radius: 5px;
+        font-size: 12px;
+        width: 30%;
+        margin-top: 5%;
+    }
+    
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgb(255, 0, 0);
+        color: white;
+        padding: 3px 7px;
+        cursor: pointer;
+    }
+    
+    .formation{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        justify-self: center;
+        width: 70%;
+        margin-top: 25%;
+        margin-left: 6%;
+        display: none;
+    }
+    
+    .formation img{
+        width: 100%;
+    }
+  
+    
+    /* *************** */
+    .subs{
+        display: flex;
+        overflow-x: scroll;
+        overflow-y: scroll;
+        border: rgb(255, 255, 255) solid 1px;
+        background-color: rgba(0, 0, 0, 0.514);
+        width: 60%;
+        height: 90px;
+        border-radius: 10px;
+        /* padding: 25%; */
+        padding-left: 10%;
+        padding-top: 15%;
+        margin-top: -5%;
+        margin-left: 12%;
+        gap: 5%;
+    }
+    
+    .player-card {
+        min-width: 60px;
+        min-height: 80px;
+        border-radius: 30%;
+        background-image: url(images/MANAGER\ card.png);
+        background-size: cover;
+        position: relative;
+        transform: translate(-50%, -60%);
+    }
+    .position{
+        background-image: url(images/bbbbbbbb.png);
+        background-size: cover;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+    }
+    
+    #position{  
+        position: absolute;
+        top: 25%;
+        left: 13%;
+        font-size: 7px;
+        font-weight: 500;
+    }
+    #rating{
+        position: absolute;
+        top: 15%;
+        left: 13%;
+        font-size: 7px;
+        font-weight: 500;
+    }
+    #photo {
+        position: absolute;
+        top: 10%;
+        left: 27%;
+        width: 30px;
+        height: 35px;
+    
+    }
+    #photo img{
+        width: 100%;
+        height: 100%;
+    }
+    #player-name{
+        position: absolute;
+        top: 55%;
+        left: 20%;
+        width: 35px;
+        font-size: 7px;
+        font-weight: 600;
+    }
+    #powers{
+        position: absolute;
+        top: 65%;
+        left: 14%;
+        width: 60%;
+        height: 70px;
+        font-size: 6px;
+        font-weight: 600;
+        text-align: center;
+        display: flex;
+        gap: 3px;
+        display: none;
+    }
+    #club-nation{
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        top: 65%;
+        left: 20%;
+        width: 40%;
+        height: 60px;
+        gap: 5px;
+    }
+    #nation img{
+        width: 15px;
+        height: 7px;
+    }
+    #club img{
+        width: 15px;
+        height: 7px;
+    }
+    .position{
+        position: absolute;
+        transition: 0.5s;
+    }
+    
+    .deletebtn {
+        background-color: rgb(252, 26, 26);
+        color: white;
+        border: none;
+        padding: 1px 6px;
+        cursor: pointer;
+        border-radius: 5px;
+        position: absolute;
+        top: 17%;
+        left: 88%;
+        width: 15px;
+        height: 15px;
+    }
+    
+    .deletebtn:hover {
+        background-color: rgb(116, 3, 3);
+    }
+    
+    .editbtn{
+        background-color: rgb(245, 245, 245);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1px 3px;
+        position: absolute;
+        top: 37%;
+        left: 88%;
+    }
+     .editbtn img{
+        width: 9px;
+        height: 12px;
+     }
+    
+     .editbox{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5%;
+        padding-bottom: 50%;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        gap: 10%;
+        position: absolute;
+        width: 180px;
+        height: 220px;
+        background-color: rgb(66, 132, 238);
+        border: solid rgb(18, 18, 158) 2px;
+        border-radius: 10px;
+        top: 15%;
+        left: 88%;
+        z-index: 4;
+    }
+    
+    .editbox input{
+        border-radius: 5px;
+        color: #272727;
+        margin-top: 2%;
+    }
+    
+    .cancel-btn{
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        top: 91%;
+        border: rgb(43, 4, 128) solid 1px;
+        right: 65%;
+        width: 60px;
+        height: 20px;
+    }
+    .confirm-btn{
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        top: 91%;
+        right: 1%;
+        width: 60px;
+        height: 20px;
+        background-color: green;
+        border: rgb(43, 4, 128) solid 1px;
+    }
+    .cancel-btn:hover{
+        background-color: #160967;
+    }
+    .confirm-btn:hover{
+        background-color: rgb(9, 73, 9);
+    }
+}
+
+/* Mobile: Jusqu'à 450px */
+@media (max-width: 450px) {
+    body{
+        margin: 0;
+        background-image: url(images/body-backroung.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    
+    .field-container{
+        width: 95%;
+        height: 600px;
+        margin: 5%;
+        background-image: url(images/field\ 2D.jpg);
+        background-position: center;
+        background-size: 100%;
+        margin-top: -5%;
+        order: 2;
+        position: relative;
+    }
+    .mainpage{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .create-squad{
+        backdrop-filter: blur(10px);
+        margin-top: 5%;
+        width: 50%;
+        height: 150px;
+        background-color: rgba(51, 51, 51, 0.7); 
+        /* padding: 10%;
+        padding-top: 32%; 
+        padding-bottom: 20%; */
+        border: rgba(255, 255, 255, 0.603) solid 1px;
+        border-radius: 10px; 
+        box-shadow: 5px 5px 10px black;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+    .select-tactic{ 
+        color: white;
+        width: 70px;
+        font-size: 12px;
+    }
+    
+    .create-squad label {
+        /* display: block;  */
+        /* margin-bottom: 10px;  */
+        font-weight: bold;
+        color: white;
+        margin-top: 15%;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 600;
+        font-size: 15px;
+    } 
+    .create-squad input { 
+        width: 180px; 
+        height: 8px;
+        padding: 5px; 
+        /* margin-bottom: 20px;  */
+        border: 2px solid #aeacac; 
+        border-radius: 5px;
+    }
+  
+    .squad-formations { 
+        display: flex;
+        flex-direction: column;
+        margin-top: 0%;
+    } 
+    .squad-formations button { 
+        padding: 10px 20px; 
+        border: #20207d solid 2px; 
+        border-radius: 5px; 
+        width: 90px;
+        background-color: #007BFF; 
+        color: white; 
+        font-size: 12px;
+        font-weight: 600;
+        font-family: 'Courier New', Courier, monospace;
+        cursor: pointer;
+        height: 30px;
+
+    } 
+    .squad-formations button:hover { 
+        background-color: #20207d;
+    }
+    
+    ::-webkit-scrollbar {
+        width: 10px; 
+        height: 6px; 
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: #f0f0f0; 
+        border-radius: 10px;
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 10px; 
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+    
+    .header{
+        border-bottom: rgb(255, 255, 255) solid 1px;
+        background-color: rgb(45, 47, 45);
+        display: flex;
+        justify-content: space-between;
+        padding-left: 5%;
+        }
+        
+    .title{
+        font-style: italic;
+        font-size: 10px;
+        color: white;
+        text-shadow: black 2px 2px ; 
+    }
+               
+    .add-player-button button { 
+        padding: 15px 10px;
+        width: 100px;
+        height: 15px;
+        border: rgba(23, 9, 125, 0.763) solid 2px;
+        border-radius: 5px; 
+        background-color: #007BFF; 
+        color: white; 
+        font-size: 12px;
+        font-weight: 100;
+        cursor: pointer; 
+        /* margin-top: -20%; */
+
+    } 
+    
+    .add-player-button button:hover { 
+        background-color: #fbfbfb;
+    }
+        
+    button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    
+    /* popup box to create a new player */
+    .popup {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(1, 1, 1, 0.2);
+        backdrop-filter: blur(5px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 5;
+    }
+    .hidden {
+        display: none;
+    }
+      
+    .popup-content {
+        border: rgba(28, 146, 39, 0.763) solid 2px;
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(44, 39, 39, 0.9);
+        padding: 10px;
+        border-radius: 10px;
+        width: 75%;
+        height: 85%;
+        position: relative;
+    }
+    .popup-content .div1{
+        font-size: 10px;
+        color: white;
+        font-family: 'monospace', Courier;
+    }
+    .popup-content .div2{
+        color: white;
+        font-size: 10px;
+        font-family: 'monospace', Courier;
+        margin-top: 5%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .popup-content .div2 input{
+        margin-bottom: 5%;
+        margin-left: 20px;
+        width: 140px;
+        height: 15px;
+        border: rgba(28, 146, 39, 0.763) solid 2px;
+        border-radius: 5px;
+    }
+   
+        
+    .popup-content .div2 :nth-child(1) input{
+        margin-left: 20px;
+        
+    }
+    .popup-content .div2 ::placeholder{
+        padding-left: 10%;
+        font-size: 80%;
+    }
+    
+    .popup-content .div2 :nth-child(2) input{
+        /* margin-left: 11px; */
+    }
+    .popup-content .div2 #photoP{
+        margin-left: 10%;
+    }
+    #image-url{
+        background: url(images/playerphoto0.jpg) no-repeat;    
+        background-position: center;
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        font-size: 10px;
+        margin-left: 20%;
+    }
+    #positiontitle{
+        font-size: 10px;
+        color: white;
+        font-family: 'monospace', Courier;
+        font-weight: 200;    
+    }
+    .popup-content .div3{
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        margin-left: 2%;
+        margin-top: -2%;
+        margin-bottom: 5%;
+    }
+    
+    #goal-stats-title{
+        color: white;
+        font-size: 10px;
+        font-family: 'monospace', Courier;
+        font-weight: 200;    
+    }
+    #position-options .position-btn {
+        margin: 5px;
+        width: 10px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        border: rgba(28, 146, 39, 0.763) solid 2px;
+        background-color: rgb(66, 66, 67);
+    }
+    
+    #general-stats{
+        display: flex;
+        flex-wrap: wrap;
+        width: 80%;
+        gap: 10%;
+        margin-left: 10%;
+        color: white;
+        font-size: 15px;
+        font-family: 'monospace', Courier;
+        margin-top: 2%;
+    }  
+    
+    #general-stats input{
+        border: rgba(28, 146, 39, 0.763) solid 2px;
+        background-color: rgb(66, 66, 67);
+        width: 30px;
+        border-radius: 5px;
+        margin-bottom: 5%;
+    }
+    .popup-content .div4 ::placeholder{
+        padding-left: 5%;
+        font-size: 70%;
+    }
+    
+    #goalkeeper-stats{
+        display: flex;
+        flex-wrap: wrap;
+        width: 80%;
+        gap: 10%;
+        margin-left: 10%;
+        color: white;
+        font-size: 15px;
+        font-family: 'monospace', Courier;
+        margin-top: 2%;
+    }  
+    
+    #goalkeeper-stats input{
+        border: rgba(28, 146, 39, 0.763) solid 2px;
+        background-color: rgb(66, 66, 67);
+        width: 30px;
+        border-radius: 5px;
+        margin-bottom: 5%;
+    }
+    
+    #goalkeeper-stats {
+        display: none; 
+    }
+    
+    .popup-content .div5{
+        margin-top: 1%;
+        display: flex;
+        justify-content: end;
+    }
+    
+    .popup-content .div5 button{
+        background-color: #058d25;
+        border: rgb(3, 77, 3) solid 2px;
+        border-radius: 5px;
+        font-size: 12px;
+        width: 50%;
+        margin-top: 5%;
+    }
+    
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgb(255, 0, 0);
+        color: white;
+        padding: 3px 7px;
+        cursor: pointer;
+    }
+    
+    .formation{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        justify-self: center;
+        width: 70%;
+        margin-top: 25%;
+        margin-left: 6%;
+        display: none;
+    }
+    
+    .formation img{
+        width: 100%;
+    }
+  
+    
+    /* *************** */
+    .subs{
+        display: flex;
+        overflow-x: scroll;
+        overflow-y: scroll;
+        border: rgb(255, 255, 255) solid 1px;
+        background-color: rgba(0, 0, 0, 0.514);
+        width: 60%;
+        height: 90px;
+        border-radius: 10px;
+        /* padding: 25%; */
+        padding-left: 10%;
+        padding-top: 15%;
+        margin-top: -15%;
+        gap: 5%;
+    }
+    
+    .player-card {
+        min-width: 60px;
+        min-height: 80px;
+        border-radius: 30%;
+        background-image: url(images/MANAGER\ card.png);
+        background-size: cover;
+        position: relative;
+        transform: translate(-50%, -60%);
+    }
+    .position{
+        background-image: url(images/bbbbbbbb.png);
+        background-size: cover;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+    }
+    
+    #position{  
+        position: absolute;
+        top: 25%;
+        left: 13%;
+        font-size: 7px;
+        font-weight: 500;
+    }
+    #rating{
+        position: absolute;
+        top: 15%;
+        left: 13%;
+        font-size: 7px;
+        font-weight: 500;
+    }
+    #photo {
+        position: absolute;
+        top: 10%;
+        left: 27%;
+        width: 30px;
+        height: 35px;
+    
+    }
+    #photo img{
+        width: 100%;
+        height: 100%;
+    }
+    #player-name{
+        position: absolute;
+        top: 55%;
+        left: 20%;
+        width: 35px;
+        font-size: 7px;
+        font-weight: 600;
+    }
+    #powers{
+        position: absolute;
+        top: 65%;
+        left: 14%;
+        width: 60%;
+        height: 70px;
+        font-size: 6px;
+        font-weight: 600;
+        text-align: center;
+        display: flex;
+        gap: 3px;
+        display: none;
+    }
+    #club-nation{
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        top: 65%;
+        left: 20%;
+        width: 40%;
+        height: 60px;
+        gap: 5px;
+    }
+    #nation img{
+        width: 15px;
+        height: 7px;
+    }
+    #club img{
+        width: 15px;
+        height: 7px;
+    }
+    .position{
+        position: absolute;
+        transition: 0.5s;
+    }
+    
+    .deletebtn {
+        background-color: rgb(252, 26, 26);
+        color: white;
+        border: none;
+        padding: 1px 6px;
+        cursor: pointer;
+        border-radius: 5px;
+        position: absolute;
+        top: 17%;
+        left: 88%;
+        width: 15px;
+        height: 15px;
+    }
+    
+    .deletebtn:hover {
+        background-color: rgb(116, 3, 3);
+    }
+    
+    .editbtn{
+        background-color: rgb(245, 245, 245);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1px 3px;
+        position: absolute;
+        top: 37%;
+        left: 88%;
+    }
+     .editbtn img{
+        width: 9px;
+        height: 12px;
+     }
+    
+     .editbox{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5%;
+        padding-bottom: 50%;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        gap: 10%;
+        position: absolute;
+        width: 180px;
+        height: 220px;
+        background-color: rgb(66, 132, 238);
+        border: solid rgb(18, 18, 158) 2px;
+        border-radius: 10px;
+        top: 15%;
+        left: 88%;
+        z-index: 4;
+    }
+    
+    .editbox input{
+        border-radius: 5px;
+        color: #272727;
+        margin-top: 2%;
+    }
+    
+    .cancel-btn{
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        top: 91%;
+        border: rgb(43, 4, 128) solid 1px;
+        right: 65%;
+        width: 60px;
+        height: 20px;
+    }
+    .confirm-btn{
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        top: 91%;
+        right: 1%;
+        width: 60px;
+        height: 20px;
+        background-color: green;
+        border: rgb(43, 4, 128) solid 1px;
+    }
+    .cancel-btn:hover{
+        background-color: #160967;
+    }
+    .confirm-btn:hover{
+        background-color: rgb(9, 73, 9);
+    }
 }

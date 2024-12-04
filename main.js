@@ -32,7 +32,6 @@
     positionOptions.forEach((btn) => {
       btn.style.backgroundColor = ""; // Reset background color
     });
-    selectedPosition = null;
   });
 
   // Handle position selection
